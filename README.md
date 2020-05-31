@@ -24,3 +24,7 @@ If you're interested in adding more features, or want to countribute to project 
 This project was inspired from https://github.com/snorpey/jpg-glitch 
 
 Thank you for visiting this repository.
+
+#Try apk
+===
+Try this application [SlideToGlitch.apk](https://github.com/shubhamvernekar/SlideToGlitch/blob/master/SlideToGlitch.apk)
