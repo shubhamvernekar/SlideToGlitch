@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".HomeActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" >
+
+
+    <ImageView
+        android:id="@+id/home_background"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="aries_content_desc"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/aries_background"/>
+
+    <LinearLayout
+        android:id="@+id/title_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:gravity="center"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/home_logo"
+            android:layout_width="@dimen/logo_width"
+            android:layout_height="@dimen/logo_height"
+            android:contentDescription="@string/app_logo_content_desc"
+            app:srcCompat="@drawable/logo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/colorPrimaryWhite"
+            android:textSize="25sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/title_home"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:gravity="bottom">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="65dp">
+
+            <ImageView
+                android:id="@+id/camera_button_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/camera_button_content_desc"
+                android:onClick="openCamera"
+                android:src="@drawable/ic_camera_alt_white"/>
+
+            <TextView
+                android:id="@+id/camera_button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/camera_button_image"
+                android:layout_marginTop="7dp"
+                android:onClick="openCamera"
+                android:text="@string/camera_button_text"
+                android:textColor="@color/colorPrimaryWhite"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/gallery_button_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/gallery_button_content_desc"
+                android:onClick="openGallery"
+                android:src="@drawable/ic_phone_android_white"/>
+
+            <TextView
+                android:id="@+id/gallery_button_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gallery_button_image"
+                android:layout_marginTop="7dp"
+                android:onClick="openGallery"
+                android:text="@string/gallery_button_text"
+                android:textColor="@color/colorPrimaryWhite"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

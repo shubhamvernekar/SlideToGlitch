@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#616161"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintTop_toTopOf="parent">
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/saveimage"
+            android:layout_marginStart="10dp"
+            android:layout_alignParentTop="true"
+            android:onClick="saveImage"></Button>
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/backtohome"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentTop="true"
+            android:onClick="backToHome"></Button>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></ImageView>
+
+        <Button
+            android:id="@+id/originalPreview"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/originalimage"></Button>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/glitchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/relativeLayout"
+        app:layout_constraintHeight_percent="0.23">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textAmount"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@string/Amount"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryWhite"></TextView>
+            <SeekBar
+                android:id="@+id/amountSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/amountValue"
+                android:layout_toEndOf="@+id/textAmount"
+                android:max="99"
+                android:min="0"></SeekBar>
+
+            <TextView
+                android:id="@+id/amountValue"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryWhite"></TextView>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textSeed"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@string/Seed"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryWhite"></TextView>
+
+            <SeekBar
+                android:id="@+id/seedSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/seedValue"
+                android:layout_toEndOf="@+id/textSeed"
+                android:max="100"
+                android:min="0"></SeekBar>
+
+            <TextView
+                android:id="@+id/seedValue"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryWhite"></TextView>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textIterations"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@string/Iterations"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryWhite"></TextView>
+
+            <SeekBar
+                android:id="@+id/iterationsSeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/iterationsValue"
+                android:layout_toEndOf="@+id/textIterations"
+                android:max="100"
+                android:min="0"></SeekBar>
+
+            <TextView
+                android:id="@+id/iterationsValue"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryWhite"></TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textQuality"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@string/Quality"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryWhite"></TextView>
+
+            <SeekBar
+                android:id="@+id/qualitySeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/qualityValue"
+                android:layout_toEndOf="@+id/textQuality"
+                android:max="99"
+                android:min="1"></SeekBar>
+
+            <TextView
+                android:id="@+id/qualityValue"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryWhite"></TextView>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aboutLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark"
+        android:visibility="visible"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.93"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/endRelativeLayout">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/colorPrimaryDark">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:layout_centerInParent="true"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryWhite"
+        ></TextView>
+</RelativeLayout>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="With this app, you can glitch/distort your own images. The image can be either captured from Camera or select from Gallery. You can use the sliders in the control panel to alter the glitched parameters. The image updates in real time. "
+            android:textColor="@color/colorPrimaryWhite"
+            ></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimaryWhite"
+            android:text="This app corrupts some bytes in an image. It directly works on the byte array of an image. This app was inspired by Georg's snorpey.github.io/jpg-glitch/ website."></TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimaryWhite"
+            android:text="This app was created by Shubham Vernekar. He is always happy to learn new things. You can explore the source code of this app on GitHub https://github.com/shubhamvernekar"></TextView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Parameters"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimaryWhite"
+                android:textStyle="bold"
+                ></TextView>
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Amount: The amount of image byte corrupted [1,99]."
+            android:textColor="@color/colorPrimaryWhite"
+            android:textStyle="italic">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Seed: Seed are the grid points selected to agglomerate the surrounding control volumes [0, 100]."
+            android:textColor="@color/colorPrimaryWhite"
+            android:textStyle="italic">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Iterations: Specifies number of time's byte will be glitched [1, 100]."
+            android:textColor="@color/colorPrimaryWhite"
+            android:textStyle="italic">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Quality: Specifies the Quality of image [1, 99]."
+            android:textColor="@color/colorPrimaryWhite"
+            android:textStyle="italic">
+        </TextView>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/endRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.07">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/Glitch"
+                android:layout_centerInParent="true"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="glitchVisible"
+                android:text="@string/Glitch"
+                android:textColor="@color/colorPrimaryWhite"
+                ></Button>
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimaryWhite"></TextView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/About"
+                android:onClick="aboutVisible"
+                android:layout_centerInParent="true"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/About"
+                android:textColor="@color/colorPrimaryWhite"
+                ></Button>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
